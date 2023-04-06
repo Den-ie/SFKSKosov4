@@ -19,6 +19,7 @@ do
 
                 Console.WriteLine("Ответ: " + NumbMin + "" + Numb + "" + NumbPlus);
                 Console.WriteLine();
+                Console.WriteLine("========================================================================================================================");
             }
             break;
 
@@ -32,7 +33,7 @@ do
 
                 for (int i = 0; i < mass.Length; i++)
                 {
-                    mass[i] = rnd.Next(1, 10);
+                    mass[i] = rnd.Next(-9, 10);
                 }
 
                 Console.Write("Массив: ");
@@ -40,9 +41,9 @@ do
                 {
                     Console.Write(mass[i] + " ");
                 }
+                Console.WriteLine();
                 Console.Write("Введите число - ");
                 int n = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine();
 
                 int Numbers = X;
                 int kol = 1;
@@ -50,35 +51,50 @@ do
 
                 do
                 {
-                    if (kol == n)
+                    if (u == mass.Length)
                     {
-                        mass[u] = 0;
-                        kol = 1;
-                        Numbers--;
+                        u = 0;
+                        for (int i = 0; i < mass.Length; i++)
+                        {
+                            if (mass[i] == 666)
+                                Console.Write("-" + " ");
+                            else
+                                Console.Write(mass[i] + " ");
+                        }
+                        Console.WriteLine();
                     }
 
 
-                    if (mass[u] == 0)
+                    if (mass[u] == 666)
                     {
                         kol--;
                     }
 
 
-                    if (u == mass.Length-1)
+                    if (kol == n)
                     {
-                        u = 0;
+                        mass[u] = 666;
+                        kol = 0;
+                        Numbers--;
                     }
+
+
 
                     u++;
                     kol++;
                 }
                 while (Numbers != 1);
 
-                Console.Write("Массив: ");
                 for (int i = 0; i < mass.Length; i++)
                 {
-                    Console.Write(mass[i] + " ");
+                    if (mass[i] == 666)
+                        Console.Write("-" + " ");
+                    else
+                        Console.Write(mass[i] + " ");
                 }
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("========================================================================================================================");
             }
             break;
 
