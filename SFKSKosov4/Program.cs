@@ -14,11 +14,12 @@ try
 
         switch (p)
         {
-            case 0: 
+            case 0:
                 { 
                     Console.WriteLine("Выход осуществлен");
                 } 
                 break;
+
             case 1:
                 {
                     Console.Write("Введите число - ");
